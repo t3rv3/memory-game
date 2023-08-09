@@ -8,7 +8,7 @@ let score = 0;
 document.querySelector("#score").style.visibility = "hidden";
 const playAgainBtn = document.querySelector('button');
 playAgainBtn.style.visibility = "hidden";
-playAgainBtn.addEventListener('click', playAgainBtn);
+playAgainBtn.addEventListener('click', playAgain);
 
 let colors = [
     "#33ff33",
@@ -48,7 +48,7 @@ while (i < numberOfSquares) {
 
 const squares = document. querySelectorAll("li")
 for (const square of squares) {
-    square.addEventListener("click", squareClicked)
+    square.addEventListener("click", squareClicked);
 }
 
 function squareClicked() {
@@ -91,15 +91,15 @@ function noMatch() {
     console.log("no Match")
 }
 function isMatch() {
-    score++
+    score++;
     document.querySelector("#score").innerText = score;
     document.querySelector("#score").style.visibility = "visible";
     square1.classList.add("pop");
     square2.classList.add("pop");
     square1.style.border = "none";
     square2.style.border = "none";
-    square1.removeEventlistener("click", squareClicked)
-    square2.removeEventlistener("click", squareClicked)
+    square1.removeEventListener("click", squareClicked);
+    square2.removeEventListener("click", squareClicked);
     clickCount = 0;
     console.log("is a match")
 }
